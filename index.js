@@ -95,7 +95,7 @@ app.post('/api/users/:_id/exercises', async(req, res) => {
       duration: savedExercise.duration,
       date: savedExercise.date.toDateString(),
       username: user.username,
-      id: user._id
+      _id: user._id
     });
   }catch (err) {
     res.json({error: err.message});
@@ -136,3 +136,4 @@ app.get('/api/users/:_id/logs', async(req, res) => {
 const listener = app.listen(process.env.PORT || 3000, () => {
   console.log('Your app is listening on port ' + listener.address().port)
 })
+
